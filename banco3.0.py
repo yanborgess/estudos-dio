@@ -31,18 +31,19 @@ def sacar(valor, saldo,limite, numero_saques,limite_saques):
     exedeu_limite = valor > limite
     exedeu_saldo = valor > saldo 
     exedeu_saques = numero_saques >= limite_saques
-    if valor > 0:
-        saldo -= valor 
-        numero_saques +=1
-        
-        print('Saque realizado com sucesso!')
-    
-    elif exedeu_limite:
+
+    if exedeu_limite:
         print('Operação cancelada! Limite atingido')
     elif exedeu_saldo:
         print('Operação cancelada! Saldo indisponivel')
     elif exedeu_saques:
         print('Operação cancelada! Numero de saques atingido')
+    else:
+        valor > 0
+        saldo -= valor 
+        numero_saques +=1
+        
+        print('Saque realizado com sucesso!')
     return saldo
 
 def extrato(extrato):
